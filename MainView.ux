@@ -1,0 +1,108 @@
+<App Theme="Basic" ClearColor="#ffffff">
+	<iOS.StatusBarConfig Style="Light" />
+
+	<DockPanel>
+		<Style>
+			<Text TextColor="#585858" />
+			<TextInput PlaceholderColor="#C4C0CD" TextColor="#585858" CaretColor="#585858" />
+		</Style>
+
+		<!-- Button colors -->
+		<float4 ux:Key="C600" ux:Value="#A4052C" />
+		<float4 ux:Key="C700" ux:Value="#262022" />
+		<float4 ux:Key="CFillFore" ux:Value="#75707D" />
+
+		<StatusBarBackground Dock="Top" />
+		<BottomBarBackground Dock="Bottom" />
+
+		<JavaScript>
+			var Observable = require("FuseJS/Observable");
+
+			var currentPage = Observable("page1");
+			var username = Observable("");
+			var password = Observable("");
+
+			var areCredentialsValid = Observable(function() {
+				return username.value != "" && password.value != "";
+			});
+
+
+			function goToPage2() {
+				if(username.value == "hackamano" && password.value=="admin")
+				{
+					currentPage.value="page2";
+				}	
+				else
+				{
+					currentPage.value="page3" ;
+				}
+			}
+
+			function goToPage1() {
+				currentPage.value="page1";
+			}
+
+			function goToRegistro() {
+				currentPage.value="registro";
+			}
+
+			module.exports = {
+
+				currentPage: currentPage,
+				username: username,
+				password: password,
+
+
+				areCredentialsValid: areCredentialsValid,
+				goToPage2: goToPage2,
+				goToPage1: goToPage1,
+				goToRegistro: goToRegistro
+			
+			
+
+			};
+		</JavaScript>
+
+		<PageControl Active="{currentPage}">
+			<Page ux:Name="page1">
+				<Grid Rows="1*,1*">
+					<StackPanel Alignment="VerticalCenter">
+						<Text Alignment="HorizontalCenter" FontSize="50">InfoMedic</Text>
+						<Text Alignment="HorizontalCenter" Opacity=".5">Administrando la Salud</Text>
+					</StackPanel>
+					<Image File="Assets/logo_h.png"/>
+					<StackPanel Alignment="VerticalCenter" Margin="50,0,50,0">
+						<TextInput Row="0" PlaceholderText="usuario" Value="{username}"/>
+						<TextInput Row="1" PlaceholderText="contraseña" IsPassword="true" Value="{password}"/>
+						<Button Text="Log in" IsEnabled="{areCredentialsValid}" Clicked="{goToPage2}"/>
+					</StackPanel>
+					</Grid>
+			</Page>
+			<Page ux:Name="page2">
+				  <Grid>
+				  <StackPanel Alignment="VerticalCenter" Margin="50,0,50,0">	
+				  	<Button Row="0" Text="Emergencia"/>
+				  	<Button Row="1" Text="Crear Cartilla" Clicked="{goToRegistro}"/>
+				  	<Button Row="2" Text="Consultar Cartilla"/>
+				  	<Button Row="3" Text="Padecimientos"/>
+				  </StackPanel>	
+				  </Grid>
+			</Page>
+
+			<Page ux:Name="page3">
+				<StackPanel Alignment="VerticalCenter" Margin="50,0,50,0">
+				  <Text Alignment="HorizontalCenter" FontSize="20">Error en Credenciales</Text>
+				  <Button Text="Regresar" IsEnabled="true" Clicked="{goToPage1}"/>
+				</StackPanel> 
+			</Page>
+
+			<Page ux:Name="registro">
+				  <Grid>
+				  <StackPanel Alignment="VerticalCenter" Margin="10,0,10,0">	
+				  </StackPanel>	
+				  </Grid>
+			</Page>
+		</PageControl>
+	</DockPanel>
+</App>
+
