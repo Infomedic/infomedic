@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+            <item
+                android:id="@+id/inicio"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Inicio"/>
+            <item
+                android:id="@+id/consulta"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Consultar cartilla"/>
+
+            <item
+                android:id="@+id/actiont_padecimientos"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/action_padecimintos"/>
+
+            <item
+                android:id="@+id/actiont_recomendacion"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/action_recomendacion"/>
+            <item
+                android:id="@+id/actiont_historial"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/action_historial" />
+            <item
+                android:id="@+id/actiont_alergias"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/action_alergias" />
+
+
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

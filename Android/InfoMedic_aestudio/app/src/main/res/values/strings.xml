@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Bien venido</string>
+    <string name="perfil_medico">Perfil Medico</string>
+    <string name="consultar">Consulta Información</string>
+    <string name="curp">Conoce tú CURP</string>
+    <string name="action_registrar">Registrar</string>
+    <string name="title_activity_registro">Inicio Usuario</string>
+    <string name="action_padecimintos">Padecimientos</string>
+    <string name="action_recomendacion">Recomendaciones</string>
+    <string name="action_historial">Historial Medico</string>
+    <string name="action_alergias">Alergias</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

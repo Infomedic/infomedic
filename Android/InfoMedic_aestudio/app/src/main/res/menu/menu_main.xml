@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.nativelabs08.infomedicprototipo.MainActivity">
+
+    <item
+        android:id="@+id/actiont_registrar"
+        android:orderInCategory="100"
+        android:title="@string/action_registrar"
+        app:showAsAction="never"/>
+
+
+</menu>
+
+
